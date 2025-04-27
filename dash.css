@@ -1,0 +1,280 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    height: 100vh;
+    background-color: #f4f4f4;
+    overflow-x: hidden; /* Prevent horizontal overflow */
+    position: relative;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 300px;
+    background: linear-gradient(180deg, #2c3e50, #34495e);
+    color: #fff;
+    padding: 80px 30px;
+    position: fixed;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    transition: width 0.3s ease, background 0.3s ease;
+    min-height: 100vh; /* Ensure the sidebar takes full height of viewport */
+    overflow: hidden;  /* Prevents sidebar overflow */
+}
+
+/* Sidebar header */
+.sidebar h1 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 32px;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+/* Sidebar list items */
+.sidebar ul {
+    list-style: none;
+    margin: 20px;
+    padding: 15px;
+}
+
+.sidebar ul li {
+    margin: 20px 0;
+}
+
+/* Sidebar Links as Buttons */
+.sidebar ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 18px;
+    display: block;
+    padding: 12px 20px;
+    border-radius: 5px;
+    background-color: #6b6c6c;
+    transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Hover Effect with Linear Gradient */
+.sidebar ul li a:hover {
+    background: linear-gradient(135deg, #ee0f88, #3498db, #1abc9c, #f39c12, #ee0f88);
+    color: #fff;
+    transform: translateX(5px);
+}
+
+/* Sidebar hover active effect */
+.sidebar ul li a:active {
+    transform: translateX(2px);
+}
+
+/* Main Content */
+.main-content {
+    margin-left: 300px;
+    padding: 40px;
+    width: calc(100% - 300px); /* Ensure content adjusts based on sidebar width */
+    height: 100vh;
+    position: relative;
+    background-color: #f9f9f9;
+    background: conic-gradient(from 0deg, #ee0f88, #3498db, #1abc9c, #f39c12, #ee0f88);
+    background-size: cover;
+    animation: rotate-gradient 10s linear infinite;
+    overflow-x: hidden;  /* Prevent horizontal overflow */
+    overflow-y: auto; /* Allow vertical scrolling */
+}
+
+/* Animated Conic Gradient */
+@keyframes rotate-gradient {
+    0% {
+        background: conic-gradient(from 0deg, #ee0f88, #3498db, #1abc9c, #f39c12, #ee0f88);
+    }
+    100% {
+        background: conic-gradient(from 360deg, #ee0f88, #3498db, #1abc9c, #f39c12, #ee0f88);
+    }
+}
+
+/* Content Area */
+.content {
+    text-align: center;
+    padding-top: 50px;
+}
+
+/* Subject Container */
+.subject-container {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 30px;
+    flex-wrap: wrap;
+    position: relative; /* Positioning context for falling effect */
+    margin-top: 20px;
+}
+
+/* Subject Boxes */
+.subject-box {
+    background-color: #191958;
+    padding: 40px;
+    border-radius: 15px;
+    width: 300px;
+    text-align: center;
+    color: #fff;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, margin-top 0.3s ease;
+    opacity: 0; /* Start with invisible opacity */
+    position: relative;
+    margin-top: 40px;
+    top: -500px; /* Start from above the screen */
+    transition: opacity 0.5s ease-out, top 1s ease-out;
+}
+
+/* Animation for the falling raindrop effect */
+@keyframes raindrop-fall {
+    0% {
+        top: -500px; /* Start from above the screen */
+        opacity: 0; /* Fully invisible */
+    }
+    50% {
+        opacity: 0.8; /* Slightly visible halfway down */
+    }
+    100% {
+        top: 0; /* End at the final position */
+        opacity: 1; /* Fully visible */
+    }
+}
+
+/* Apply falling effect to each box with a delay */
+.subject-box:nth-child(1) {
+    animation: raindrop-fall 1s ease-out 0.5s forwards; /* Add delay */
+}
+
+.subject-box:nth-child(2) {
+    animation: raindrop-fall 1s ease-out 1s forwards; /* Add delay */
+}
+
+.subject-box:nth-child(3) {
+    animation: raindrop-fall 1s ease-out 1.5s forwards; /* Add delay */
+}
+
+
+/* Subject Box Hover Effect */
+.subject-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    margin-top: 10px;
+    opacity: 1;
+}
+
+.subject-box h3 {
+    font-size: 26px;
+    margin-bottom: 20px;
+    color: #ee0f88;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.subject-box p {
+    font-size: 18px;
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+button {
+    padding: 15px 25px;
+    background-color: #ee0f88;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-weight: bold;
+}
+
+button a {
+    text-decoration: none;
+    color: #fff;
+}
+
+button:hover {
+    background-color: #d4b36c;
+    transform: scale(1.05);
+}
+
+/* Media Queries for Responsiveness */
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 20px;
+    }
+
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+        padding: 20px;
+    }
+
+    .subject-container {
+        flex-direction: column; /* Stack the subject boxes vertically */
+        align-items: center; /* Center align the subject boxes */
+        margin-top: 20px;
+    }
+
+    /* Subject Box Adjustments for smaller screens */
+    .subject-box {
+        width: 80%; /* Adjust the width for smaller screens */
+        margin-bottom: 20px; /* Add space between stacked boxes */
+    }
+
+    .sidebar ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .sidebar ul li {
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    /* Further adjust the subject boxes for very small screens */
+    .subject-box {
+        width: 90%; /* Make the subject boxes take 90% width of the screen */
+    }
+
+    .sidebar h1 {
+        font-size: 24px; /* Adjust font size of the sidebar title */
+    }
+
+    .sidebar ul li a {
+        font-size: 16px; /* Adjust font size for smaller screens */
+        padding: 10px 15px;
+    }
+
+    h2 {
+        font-size: 20px; /* Adjust heading size */
+    }
+
+    /* Reduce the space between subject boxes */
+    .subject-box {
+        margin-bottom: 10px;
+    }
+}
