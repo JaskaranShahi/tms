@@ -1,0 +1,183 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: #0c192c;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    animation: rainAnimation 2s ease-out forwards;
+}
+
+.box {
+    width: 250px;
+    height: 250px;
+    background: linear-gradient(45deg, #2ac2e5,#ff2d75); /* Linear gradient effect */
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: rgb(43, 40, 103);
+    text-align: center;
+    position: relative;
+    /* transform: translateY(100vh); /* Start below the screen */
+    animation: slideInAnimation 5s ease-out forwards, moveInOut 2s ease-in-out infinite; 
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+
+
+/* Add this to your question.css file */
+
+/* Style for the back button */
+#back-btn {
+    position: fixed; /* Position fixed to stay on top even when scrolling */
+    top: 10px;
+    left: 10px;
+    background: linear-gradient(90deg, #e247a9, #4cbdf1); /* Linear gradient */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    z-index: 1000; /* Ensure it stays on top of other elements */
+}
+
+/* Hover effect to reverse gradient */
+#back-btn:hover {
+    background: linear-gradient(90deg, #f903a3, #04daf2);
+}
+
+/* Optional: If you want the header to be above other content */
+.header {
+    position: relative;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.box h2 {
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.box p {
+    font-size: 14px;
+    color: #243d6c;
+}
+
+/* Sliding-in animation */
+@keyframes slideInAnimation {
+    0% {
+        transform: translateY(100vh); /* Start below the screen */
+    }
+    100% {
+        transform: translateY(0); /* Slide to center */
+    }
+}
+
+/* Move in and out animation for the box */
+@keyframes moveInOut {
+    0% {
+        transform: translateY(0); /* Initial position */
+    }
+    25% {
+        transform: translateY(-10px); /* Move up slightly */
+    }
+    50% {
+        transform: translateY(10px); /* Move down slightly */
+    }
+    75% {
+        transform: translateY(-5px); /* Move up again */
+    }
+    100% {
+        transform: translateY(0); /* Return to original position */
+    }
+}
+
+/* Pulsating LED border animation */
+
+
+/* Applying pulsating LED border to boxes */
+.box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px; /* Match the box border-radius */
+    animation: ledBorderAnimation 2s ease-in-out infinite;
+    z-index: -1;
+}
+
+/* Bubble background animation */
+.bubbles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.bubbles span {
+    position: absolute;
+    bottom: -50px; /* Start below the viewport */
+    width: 30px;
+    height: 30px;
+    background: #4fc3dc;
+    border-radius: 50%;
+    box-shadow: 0 0 0 10px #4fc3dc44,
+                0 0 50px #4fc3dc,
+                0 0 100px #4fc3dc;
+    animation: animateBubbles 15s linear infinite;
+    animation-duration: calc(125s / var(--i));
+    left: calc(100% * var(--random-left)); /* Random horizontal position */
+}
+
+.bubbles span:nth-child(even) {
+    background: #ff2d75;
+    box-shadow: 0 0 0 10px #ff2d7544,
+                0 0 50px #ff2d75,
+                0 0 100px #ff2d75;
+}
+
+@keyframes animateBubbles {
+    0% {
+        transform: translateY(0) scale(0); /* Start at the bottom */
+    }
+    100% {
+        transform: translateY(-100vh) scale(1); /* Rise to the top */
+    }
+}
+
+/* Animation for Container "Rain" Effect */
+@keyframes rainAnimation {
+    0% {
+        transform: translateY(-1000px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
