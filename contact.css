@@ -1,0 +1,146 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 20px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Header styling */
+header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+header h1 {
+    font-size: 48px; /* Larger header */
+    color: #333;
+    animation: slideUp 1.5s ease-out;
+}
+
+header p {
+    font-size: 22px;
+    color: #555;
+    margin-top: 10px;
+}
+
+/* Contact info styling for each person */
+.team-contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center items horizontally */
+    gap: 30px;
+}
+
+.contact-person {
+    background-color: #fff;
+    padding: 30px; /* Increased padding */
+    border-radius: 12px; /* Slightly rounder corners */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Stronger shadow */
+    width: 320px; /* Larger width */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+    overflow: hidden; /* Prevents content from spilling over */
+}
+
+.contact-person:hover {
+    transform: translateY(-15px); /* Larger hover effect */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+.contact-person h2 {
+    font-size: 26px; /* Larger name */
+    color: #007BFF;
+    margin-bottom: 15px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.contact-item {
+    margin-bottom: 20px; /* More space between items */
+}
+
+.contact-item h3 {
+    font-size: 20px; /* Larger labels */
+    color: #333;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.contact-item p {
+    font-size: 18px; /* Larger text for contact info */
+    line-height: 1.6;
+}
+
+.contact-item a {
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+    color: #0056b3;
+}
+
+/* Hover effect for social media links */
+.contact-item a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+/* Footer styling */
+footer {
+    text-align: center;
+    margin-top: 60px;
+    font-size: 16px;
+    color: #777;
+    padding: 20px;
+    background-color: #3792f3;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+.back-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1000;
+}
+.back-button:hover {
+    background-color: #0056b3;
+}
