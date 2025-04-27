@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forgot Password</title>
+  <link rel="stylesheet" href="login.css">
+  <script>
+    function validateStudentID(event) {
+      // Prevent form submission to handle validation
+      event.preventDefault();
+
+      // Get the value of the student ID
+      const studentID = document.getElementById('username').value;
+
+      // Correct Student ID (you can adjust or remove this check as needed)
+      const correctStudentID = '2410991113';
+
+      // Check if the entered student ID matches the correct one
+      if (studentID === correctStudentID) {
+        // Simulate sending a password reset email
+        alert('Password reset link has been sent to your email address.');
+        // Redirect to the login page after successful request
+        window.location.href = 'login1.html';
+      } else {
+        // Show an error message if the student ID is incorrect
+        alert('Invalid Student ID. Please check and try again.');
+      }
+    }
+  </script>
+</head>
+<body>
+  <div class="abc">
+    <section>
+      <div class="wave wave1"></div>
+      <div class="wave wave2"></div>
+      <div class="wave wave3"></div>
+      <div class="wave wave4"></div>
+    </section>
+  </div>
+
+  <div class="container">
+    <div class="wrapper">
+      <h1><b><em>Forgot Password</em></b></h1>
+      <form action="javascript:void(0);" method="POST" onsubmit="validateStudentID(event)">
+        <div class="form-group">
+          <label for="username">Student-ID</label>
+          <input type="text" id="username" name="username" required>
+        </div>
+
+        <button type="submit">Submit</button>
+
+        <div class="login">
+          <p><h4>Remembered your password? <a href="login.html">Log In</a></h4></p>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
