@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Management System</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="/logoo.jpg" alt="Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#missions">Missions</a></li>
+                <li><a href="#security">Security</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+        </nav>
+    </header>
+<center> 
+    <section id="home">
+        <h1>Welcome to Our Test Management System</h1>
+        <p>Here we help you manage your tests and assessments efficiently. Our system offers a range of features to make your life easier.</p>
+        <a   href="login.html " class="cta-button">Get Started</a>
+    </section>
+    </center>
+<center>
+    <section id="features">
+        <h2>Our Features</h2>
+        <div class="feature-grid">
+            <div class="feature-box">
+                <h3>Easy Test Creation</h3>
+                <p>Quickly create customized tests using a simple, user-friendly interface. Choose from multiple question types such as multiple choice, true/false, and short answer.</p>
+            </div>
+            <div class="feature-box">
+                <h3>Real-Time Results</h3>
+                <p>Receive instant grading and feedback. Track student progress in real-time, making it easier to identify strengths and areas for improvement.</p>
+            </div>
+            <div class="feature-box">
+                <h3>Secure Exam Environment</h3>
+                <p>We ensure that all tests are conducted in a secure and cheat-free environment with features such as time limits, question shuffling, and more.</p>
+            </div>
+            <div class="feature-box">
+                <h3>Comprehensive Analytics</h3>
+                <p>Get detailed analytics and reports on student performance, allowing you to analyze results and track improvement trends over time.</p>
+            </div>
+        </div>
+    </section>
+</center>
+    <section id="missions">
+        <h2>Our Missions</h2>
+        <div class="mission-grid">
+            <div class="mission-box">
+                <h3>Simplify Assessment Management</h3>
+                <p>Our goal is to provide an intuitive platform for educators to easily manage all aspects of assessments, from creation to evaluation, with minimal effort and maximum accuracy.</p>
+            </div>
+            <div class="mission-box">
+                <h3>Enhance Learning Outcomes</h3>
+                <p>We aim to empower students by providing timely feedback, personalized learning paths, and a comprehensive understanding of their strengths and weaknesses.</p>
+            </div>
+            <div class="mission-box">
+                <h3> Ensure Data Security</h3>
+                <p>We prioritize the security of your data. With robust encryption and privacy protection protocols, we ensure that student and test data is kept safe and secure.</p>
+            </div>
+            <div class="mission-box">
+                <h3>Promote Accessibility</h3>
+                <p>Our system is designed to be accessible to all users, ensuring that students and educators can use it effortlessly on any device, anytime and anywhere.</p>
+            </div>
+        </div>
+    </section>
+<center>
+    <section id="security">
+        <h2>Security and Privacy</h2>
+        <p>We take your security and privacy seriously. All your data is protected with encryption, ensuring your peace of mind.</p>
+    </section>
+</center>
+    <section id="faq">
+        <h2>Frequently Asked Questions</h2>
+        <ul>
+            <li>
+                <div class="faq-question">What is Test Management System?</div>
+                <div class="faq-answer">A system to manage tests, exams, and assessments efficiently.</div>
+            </li>
+            <li>
+                <div class="faq-question">How does it work?</div>
+                <div class="faq-answer">It helps administrators create, organize, and analyze tests easily.</div>
+            </li>
+            <li>
+                <div class="faq-question">Is it secure?</div>
+                <div class="faq-answer">Yes, all your data is encrypted and secure.</div>
+            </li>
+        </ul>
+    </section>
+<center>
+    <footer>
+        <div class="contact">
+            <p>Contact Us</p>
+            <p>Email: testnest@gmail.com</p>
+        </div>
+        <div class="social_icon">
+            <p>Follow us on social media</p>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2024 Test Management System</p>
+        </div>
+    </footer>
+</center>
+    <script>
+
+        document.querySelectorAll('.faq-question').forEach((question) => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                answer.classList.toggle('show');
+
+              
+                document.querySelectorAll('.faq-answer').forEach((otherAnswer) => {
+                    if (otherAnswer !== answer) {
+                        otherAnswer.classList.remove('show');
+                    }
+                });
+            });
+        });
+
+        const fadeInElements = document.querySelectorAll('.feature-grid, .mission-grid');
+
+        const observerOptions = {
+            threshold: 0.5
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                }
+            });
+        }, observerOptions);
+
+        fadeInElements.forEach(element => {
+            element.style.opacity = 0;  
+            observer.observe(element);
+        });
+    </script>
+</body>
+
+</html>
+
+
+
+
