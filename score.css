@@ -1,0 +1,98 @@
+/* General styles for body and container */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 450px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+/* Header styling */
+h1 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Styling for the quiz and question content */
+#quiz-container {
+    margin-bottom: 20px;
+}
+
+#question-number {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+#question {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+/* Answer buttons styling */
+#answer-buttons {
+    margin-bottom: 20px;
+}
+
+.btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    margin: 5px 0;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn:hover {
+    background-color: #45a049;
+}
+
+/* Timer styling */
+#timer {
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+/* Styling for the Scorecard */
+#scorecard {
+    display: none;
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+#scorecard h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+#scorecard p {
+    font-size: 18px;
+    margin: 5px 0;
+}
+
+#scorecard button {
+    margin-top: 20px;
+    background-color: #2196F3;
+}
+
+#scorecard button:hover {
+    background-color: #1976D2;
+}
+
