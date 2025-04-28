@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="guide.css">
+    <script>
+        // JavaScript function to check checkbox and navigate
+        function validateAgreement() {
+            // Get the checkbox element
+            var checkbox = document.getElementById('agreementCheckbox');
+            
+            // Check if the checkbox is checked
+            if (!checkbox.checked) {
+                // If not checked, alert the user and prevent navigation
+                alert("You must agree to all the guidelines to proceed.");
+                return false;
+            }
+            // If checked, navigate to the next page (fee.html)
+            window.location.href = "py2.html";
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <div class="outer">
+        <center>
+            <div class="inner">
+                <h1>Exam Guidelines</h1>
+                <ol class="guidelines">
+                    <li>Read each question carefully.</li><br>
+                    <li>Choose the best answer from the options provided.</li><br>
+                    <li>You can skip questions and come back to them later.</li><br>
+                    <li>You cannot select more than one option.</li><br>
+                    <li>Total time for the test is 150 seconds. </li><br>
+                    <li>Time for each question is 15 seconds. </li><br>
+                    <li>Do not refresh the page while taking the exam.</li><br>
+                    <li>Good luck!</li><br>
+                </ol>
+
+                <font color="antiquewhite">I agree with all these guidelines</font>
+                <input type="checkbox" id="agreementCheckbox" required>
+                <br><br>
+
+                <!-- Modified Next Button -->
+                <button id="nextButton" onclick="return validateAgreement();">
+                    Next
+                </button>
+            </div>
+        </center>
+    </div>
+</body>
+</html>
