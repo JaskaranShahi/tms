@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Animation Effects</title>
+    <link rel="stylesheet" href="bubbles.css">
+</head>
+<body>
+    <button id="back-btn">BACK</button>
+    <div class="container">
+        <div class="bubbles">
+            <!-- Bubbles animation (add the styles for this in your CSS file) -->
+            <span style="--i:11;--random-left: 0.1;"></span>
+            <span style="--i:12;--random-left: 0.3;"></span>
+            <span style="--i:24;--random-left: 0.5;"></span>
+            <span style="--i:10;--random-left: 0.7;"></span>
+            <span style="--i:14;--random-left: 0.9;"></span>
+            <span style="--i:23;--random-left: 0.6;"></span>
+            <span style="--i:18;--random-left: 0.3;"></span>
+            <span style="--i:16;--random-left: 0.5;"></span>
+            <span style="--i:19;--random-left: 0.9;"></span>
+            <span style="--i:20;--random-left: 0.24;"></span>
+            <span style="--i:22;--random-left: 0.6;"></span>
+            <span style="--i:25;--random-left: 0.5;"></span>
+            <span style="--i:18;--random-left: 0.4;"></span>
+            <span style="--i:21;--random-left: 0.7;"></span>
+            <span style="--i:15;--random-left: 0.9;"></span>
+            <span style="--i:13;--random-left: 0.2;"></span>
+            <span style="--i:26;--random-left: 0.1;"></span>
+            <span style="--i:17;--random-left: 0.4;"></span>
+            <span style="--i:13;--random-left: 0.9;"></span>
+            <span style="--i:28;--random-left: 0.9;"></span>
+            <span style="--i:11;--random-left: 0.1;"></span>
+            <span style="--i:12;--random-left: 2.9;"></span>
+            <span style="--i:24;--random-left: 2.5;"></span>
+            <span style="--i:10;--random-left: 2.3;"></span>
+            <span style="--i:14;--random-left: 2.1;"></span>
+            <span style="--i:23;--random-left: 0.1;"></span>
+            <span style="--i:23;--random-left: 0.2;"></span>
+            <span style="--i:23;--random-left: 0.2;"></span>
+            <span style="--i:18;--random-left: 0.2;"></span>
+            <span style="--i:16;--random-left: 0.6;"></span>
+            <span style="--i:19;--random-left: 0.7;"></span>
+            <span style="--i:20;--random-left: 0.8;"></span>
+            <span style="--i:22;--random-left: 0.9;"></span>
+            <span style="--i:25;--random-left: 0.1;"></span>
+            <span style="--i:18;--random-left: 0.2;"></span>
+            <span style="--i:21;--random-left: 0.3;"></span>
+            <span style="--i:15;--random-left: 0.4;"></span>
+            <span style="--i:13;--random-left: 0.5;"></span>
+            <span style="--i:26;--random-left: 0.6;"></span>
+            <span style="--i:17;--random-left: 0.7;"></span>
+            <span style="--i:13;--random-left: 0.8;"></span>
+            <span style="--i:28;--random-left: 0.9;"></span>
+        </div>
+
+        <!-- Container for Boxes -->
+        <div class="container">
+            <a class="box" id="box1">
+                <h2>LIST</h2>
+              
+            </a>
+            <a  class="box" id="box2">
+                <h2>STRING</h2>
+               
+            </a>
+            <a  class="box" id="box3">
+                <h2>TUPLE</h2>
+                
+            </a>
+        </div>
+    </div>  
+
+    <script>
+        // JavaScript to navigate to other pages when boxes are clicked
+        document.getElementById("box1").addEventListener("click", function(e) {
+            e.preventDefault(); // Prevents default link behavior
+            window.location.href = "gpy1.html"; // Redirect to Example 1 page
+        });
+
+        document.getElementById("box2").addEventListener("click", function(e) {
+            e.preventDefault(); // Prevents default link behavior
+            window.location.href = "gpy2.html"; // Redirect to Example 2 page
+        });
+
+        document.getElementById("box3").addEventListener("click", function(e) {
+            e.preventDefault(); // Prevents default link behavior
+            window.location.href = "gpy3.html"; 
+        });
+        const backButton = document.getElementById("back-btn");
+
+backButton.addEventListener("click", () => {
+ window.location.href = "dash.html";
+});
+    </script>
+</body>
+</html>
