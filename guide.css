@@ -1,0 +1,144 @@
+body {
+    background: linear-gradient(180deg, #001e4d, #1b2648);
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Center content vertically */
+}
+
+.inner {
+    width: 90%;
+    max-width: 665px;
+    height: auto; /* Remove fixed height */
+    padding: 15px; /* Reduced padding */
+    margin: 10px;
+    background: linear-gradient(180deg,#001e4d, #1f2c53);
+    border: 2px solid #e205fb; /* Consistent border */
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Prevent overflow */
+}
+
+.outer {
+    width: 90%;
+    max-width: 700px;
+    height: auto; /* Remove fixed height */
+    margin: 10px auto;
+    padding: 15px; /* Reduced padding */
+    border: 2px solid #e205fb; /* Consistent border */
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    animation: color 2s ease-in-out infinite;
+    background: linear-gradient(45deg, #0508fb, #40fd26, #fefe02, #fe0458, #fe04fd, #04feed, #fe8804);
+    background-size: 300% 300%;
+}
+
+@keyframes color {
+    0% {
+        background-position: 0 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0 50%;
+    }
+}
+
+h1 {
+    text-align: center;
+    color: #e205fb;
+    margin-bottom: 15px; /* Reduced margin */
+    font-size: 2.5em;
+}
+
+.guidelines {
+    margin-left: 20px;
+    list-style-type: decimal;
+}
+
+.guidelines li {
+    margin-bottom: 10px;
+    padding: 8px; /* Reduced padding */
+    color: antiquewhite;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.guidelines li:hover {
+    background-color: #393838;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    margin-top: 15px; /* Reduced margin */
+    font-size: 1.2em;
+}
+
+.checkbox-label input {
+    margin-right: 10px;
+    accent-color: #5598e4;
+}
+
+button {
+    display: block;
+    width: 30%;
+    padding: 8px; /* Reduced padding */
+    font-size: 16px;
+    color: rgb(43, 40, 92);
+    animation: color 2s ease-in-out infinite;
+    background: linear-gradient(45deg, #40fd26, #fefe02);
+    background-size: 300% 300%;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:focus {
+    outline: none;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    .guidelines {
+        margin-left: 10px;
+    }
+
+    .checkbox-label {
+        font-size: 1em;
+    }
+
+    button {
+        width: 60%;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5em;
+    }
+
+    .inner, .outer {
+        padding: 10px; /* Reduced padding */
+    }
+
+    button {
+        width: 80%;
+    }
+
+    .guidelines {
+        margin-left: 5px;
+    }
+}
