@@ -1,0 +1,324 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+  }
+  body{
+    background-color: #001e4d;
+  }
+  
+  /* Full screen container with animated background */
+  .container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Prevent scrolling */
+    pointer-events: none; /* Prevent interaction with the background */
+    z-index: 1; /* Ensure background elements have lower stacking context */
+  }
+  
+  /* Animation for moving code */
+  @keyframes moveCode {
+    0% {
+      transform: translate(0px, 0px); /* Start from top-left corner */
+    }
+    25% {
+      transform: translate(100vw, 100vh); /* Move to bottom-right */
+    }
+    50% {
+      transform: translate(-50vw, -50vh); /* Move to top-left */
+    }
+    75% {
+      transform: translate(50vw, -50vh); /* Move to top-right */
+    }
+    100% {
+      transform: translate(-100vw, 100vh); /* Move to bottom-left */
+    }
+  }
+  
+  @keyframes fadeInOut {
+    0%, 100% {
+      opacity: 0;
+    }
+    20%, 80% {
+      opacity: 1;
+    }
+  }
+  
+  /* Code lines styling */
+  .code-line {
+    position: absolute;
+    font-size: 1.5em;
+    color: #33ff33;
+    text-shadow: 0 0 5px #33ff33, 0 0 10px #33ff33;
+    white-space: nowrap;
+    filter: blur(0.5px);
+    animation: moveCode 15s infinite linear, fadeInOut 12s infinite;
+    opacity: 0;
+  }
+  
+  .code-line:nth-child(1) { top: 0%; animation-delay: 0s; }
+  .code-line:nth-child(2) { top: 5%; animation-delay: 1s; }
+  .code-line:nth-child(3) { top: 10%; animation-delay: 2s; }
+  .code-line:nth-child(4) { top: 15%; animation-delay: 3s; }
+  .code-line:nth-child(5) { top: 20%; animation-delay: 4s; }
+  .code-line:nth-child(6) { top: 25%; animation-delay: 5s; }
+  .code-line:nth-child(7) { top: 30%; animation-delay: 6s; }
+  .code-line:nth-child(8) { top: 35%; animation-delay: 7s; }
+  .code-line:nth-child(9) { top: 40%; animation-delay: 8s; }
+  .code-line:nth-child(10) { top: 45%; animation-delay: 9s; }
+  .code-line:nth-child(11) { top: 50%; animation-delay: 10s; }
+  .code-line:nth-child(12) { top: 55%; animation-delay: 11s; }
+  .code-line:nth-child(13) { top: 60%; animation-delay: 12s; }
+  .code-line:nth-child(14) { top: 0%; animation-delay: 13s; }
+  .code-line:nth-child(15) { top: 5%; animation-delay: 14s; }
+  .code-line:nth-child(16) { top: 10%; animation-delay: 15s; }
+  .code-line:nth-child(17) { top: 15%; animation-delay: 16s; }
+  .code-line:nth-child(18) { top: 20%; animation-delay: 17s; }
+  .code-line:nth-child(19) { top: 25%; animation-delay: 18s; }
+  .code-line:nth-child(20) { top: 30%; animation-delay: 5s; }
+  .code-line:nth-child(21) { top: 35%; animation-delay: 4s; }
+  .code-line:nth-child(22) { top: 40%; animation-delay: 3s; }
+  .code-line:nth-child(23) { top: 45%; animation-delay: 2s; }
+  .code-line:nth-child(24) { top: 50%; animation-delay: 1s; }
+  .code-line:nth-child(25) { top: 55%; animation-delay: 0s; }
+  .code-line:nth-child(26) { top: 60%; animation-delay: 15s; }
+  
+  /* Main app container (quiz box) */
+  .app {
+    position: relative;
+    background: linear-gradient(45deg, #2dce28, #154575, #04fd04);
+    width: 90%;
+    max-width: 600px;
+    margin: 120px auto;
+    border-radius: 10px;
+    background-size: 300% 300%;
+    animation: color 3s ease-in-out infinite, border-animation 3s ease-in-out infinite, moveGradient 5s linear infinite, bulgeInOut 5s ease-in-out infinite;
+    border: 5px solid rgba(255, 255, 255, 0.5);
+    z-index: 2; /* Ensure the quiz box is on top of everything else */
+    pointer-events: auto; /* Enable interaction with the quiz box */
+  }
+  
+  /* Keyframe animation for moving gradient */
+  @keyframes moveGradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  /* Bulging effect animation for the .app container */
+  @keyframes bulgeInOut {
+    0% {
+      transform: scale(1); /* Normal size */
+    }
+    25% {
+      transform: scale(1.05); /* Slightly larger */
+    }
+    50% {
+      transform: scale(1); /* Back to normal size */
+    }
+    75% {
+      transform: scale(1.05); /* Slightly larger again */
+    }
+    100% {
+      transform: scale(1); /* Back to normal size */
+    }
+  }
+  
+  /* Header styles inside the quiz box */
+  .app h1 {
+    font-size: 2.5em;
+    color: #f5f7fb;
+    font-weight: 600;
+    border-bottom: 1px solid #faf7f7;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .quiz {
+    padding: 20px 0;
+  }
+  
+  .line {
+    width: 570px;
+    height: 1px;
+    background-color: #f5f7fb;
+    margin: 7px;
+  }
+  
+  h2 {
+    color: #f5f7fb;
+  }
+  
+  .quiz h2 {
+    font-size: 18px;
+    color: #f1f2f5;
+    font-weight: 600;
+  }
+  
+  .btn {
+    background: white;
+    color: #222;
+    font-weight: 500;
+    width: 100%;
+    border: 1px solid #222;
+    padding: 10px;
+    margin: 10px 0;
+    text-align: left;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  
+  .btn:hover:not([disabled]) {
+    background: #222;
+    color: #fff;
+  }
+  
+  .btn:disabled {
+    cursor: no-drop;
+  }
+  
+  #next-btn {
+    background: #001e4d;
+    color: #fff;
+    font-weight: 500;
+    width: 150px;
+    border: 0;
+    padding: 10px;
+    margin: 20px auto 0;
+    border-radius: 4px;
+    cursor: pointer;
+    display: block;
+  }
+  
+  /* Timer and Question Number Styles */
+  #question-info {
+    font-size: 18px;
+    color: #f1f2f5;
+    font-weight: 500;
+  }
+  
+  #question-container {
+    margin-bottom: 5px;
+    margin: 2px;
+    text-align: center;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 7px;
+    padding: 7px;
+    font-size: 17px;
+  }
+  
+  .header-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: auto;
+  }
+  
+  #question-number {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-right: 5px;
+    padding: 3px;
+    color: #f5f7fb;
+  }
+  
+  #timer {
+    font-size: 1.5em; /* Larger font size */
+    font-weight: bold;
+    color: red;
+    background-color: white;
+    border: 2px solid red;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px auto;
+    padding: 10px;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .app {
+      width: 95%; /* Increase width for smaller screens */
+      margin: 10vh auto; /* Add more vertical space */
+    }
+  
+    .app h1 {
+      font-size: 2em; /* Reduce font size of the header */
+    }
+  
+    #question {
+      font-size: 1.2em; /* Smaller font size for the question */
+    }
+  
+    .btn {
+      font-size: 1em; /* Slightly smaller buttons */
+      padding: 8px; /* Less padding */
+    }
+  
+    #timer {
+      width: 40px; /* Smaller circle for timer */
+      height: 40px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .app {
+      width: 95%; /* Further reduce width on very small screens */
+      margin: 10vh auto;
+    }
+  
+    .app h1 {
+      font-size: 1.5em; /* Reduce header size even more */
+    }
+  
+    #question {
+      font-size: 1em; /* Reduce question text size */
+    }
+  
+    .btn {
+      font-size: 0.9em; /* Further reduce button size */
+      padding: 7px; /* Even smaller padding */
+    }
+  
+    #timer {
+      width: 35px; /* Even smaller timer circle */
+      height: 35px;
+      font-size: 1.2em; /* Smaller font size inside the circle */
+    }
+  }
+  
+  #answer-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    padding: 5px;
+    width: auto;
+  }
+  .correct{
+    background:#05f010;
+}
+.incorrect{
+    background:#ff0415;
+}
+  
